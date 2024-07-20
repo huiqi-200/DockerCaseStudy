@@ -14,10 +14,6 @@ def process_dataframe(df):
     # 3. Strip any '0's from the 'price' column
     df['price'] = df['price'].str.lstrip('0')
 
-    
-    
-
-    
     # 4. Create a new column 'price_100' with 1 if 'price' > 100, else 0
     df['price'] = pd.to_numeric(df['price'], errors='coerce')
     df['above_100'] = df['price'].apply(lambda x: True if x > 100 else False)

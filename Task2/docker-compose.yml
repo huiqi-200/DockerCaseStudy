@@ -3,27 +3,27 @@ services:
     pgdatabase:
         environment:
             - POSTGRES_NAME=pgdatabase
-            - POSTGRES_USER=root
-            - POSTGRES_PASSWORD=root
-            - POSTGRES_DB=ny_taxi
+            - POSTGRES_USER=${POSTGRES_USER}
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+            - POSTGRES_DB=car_dealership
 
         # https://stackoverflow.com/questions/32269810/understanding-docker-v-command
         volumes:
-            - "./data/ny_taxi_postgres_data:/var/lib/postgresql/data:rw"
+            - ./ddl/init.sql:/docker-entrypoint-initdb.d/init.sql
         network_mode: pg-network
         ports:
             - "5431:5432"
-        image: 'postgres:16'
+        image: 'postgres:latest'
 
-    pgadmin4:
-        environment:
-            - PGADMIN_DEFAULT_EMAIL=admin@admin.com
-            - PGADMIN_DEFAULT_PASSWORD=root
-        ports:
-            - '8080:80'
-        network_mode: pg-network
-        container_name: pgadmin-2
-        image: dpage/pgadmin4
+    # pgadmin4:
+    #     environment:
+    #         - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+    #         - PGADMIN_DEFAULT_PASSWORD=root
+    #     ports:
+    #         - '8080:80'
+    #     network_mode: pg-network
+    #     container_name: pgadmin-2
+    #     image: dpage/pgadmin4
 networks:
     pg-network:
         name: pg-network
