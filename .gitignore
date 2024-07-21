@@ -1,3 +1,5 @@
 *.pdf
 *.csv
 Task2/.env
+
+.venv/
