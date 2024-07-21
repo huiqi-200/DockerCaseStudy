@@ -28,9 +28,11 @@ if __name__ == "__main__":
     # Define the folder path
     raw_folder_path = 'Datasets'
     processed_folder_path = 'Processed_Datasets'
+    
     # Get the list of filenames
     filenames = [filename for filename in os.listdir(raw_folder_path) if os.path.isfile(os.path.join(raw_folder_path, filename))]
     for file in filenames:
         df = pd.read_csv(f"{raw_folder_path}/{file}", dtype=schema )
         processed_df = process_dataframe(df)
         processed_df.to_csv(f"{processed_folder_path}/processed_{file}", index=False)
+        print(f'file: {file} processed')

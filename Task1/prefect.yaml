@@ -1,6 +1,0 @@
-deployments:
-  ...
-  schedules:
-    - cron: "0 1 * * *"
-      timezone: "Asia/Singapore"
-      active: true
