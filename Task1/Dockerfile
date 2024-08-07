@@ -15,3 +15,9 @@ RUN /usr/bin/crontab /etc/cron.d/crontab
 CMD /usr/sbin/cron -f
 
 # source: https://github.com/adiii717/docker-python-cronjob/blob/master/Dockerfile
+
+
+
+
+
+# source: https://datatalks.club/blog/how-to-setup-lightweight-local-version-for-airflow.html
