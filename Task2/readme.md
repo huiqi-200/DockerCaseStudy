@@ -3,7 +3,7 @@ Using : https://github.com/docker-library/postgres/blob/d08757ccb56ee047efd76c41
 ## Set up:
 In Test2 (current directory),
 1. Create a .env file with the following environment variables:  
-    <code> POSTGRES_USER  =
+    <code> POSTGRES_USER  =  
             POSTGRES_PASSWORD  =  
             POSTGRES_DB = 
     </code>
