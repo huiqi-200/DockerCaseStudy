@@ -1,3 +1,0 @@
-# START CRON JOB
-* * * * * python task1/dags/task1.py 
-# END CRON JOB

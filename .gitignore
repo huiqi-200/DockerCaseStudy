@@ -5,3 +5,5 @@ Task2/.env
 .venv/
 Task4/Singapore_Covid_Data/
 Task1/Datasets/*
+SetUpScheduler/logs/*
+SetUpScheduler/dags/__pycache__/*
